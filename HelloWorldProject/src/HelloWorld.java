@@ -9,26 +9,28 @@ public class HelloWorld {
 	public static void main(String[] args) {
 		Scanner keyB = new Scanner(System.in);
 
-		System.out.println("Press 1 if you want to print a Binary to Decimal:");
-		System.out.println("Press 2 if you want to print a Decimal to Binary:");
-		int choice = keyB.nextInt();
+		boolean x = true;
 
-		if(choice == 1)
-		{
-			System.out.println("Input a Binary Number with 1-8 digits");
-			int binary = keyB.nextInt();
+		while(x){
+			System.out.println("Choose: 1 Binary to Decimal, 2. Decmial to Binary");
+			int type = 0;
+		
+		while(type != 1 && type !=2){
+			System.out.println("What would you like to choose?");
+			type = keyB.nextInt();
 		}
-
-		if(choice == 2)
-		{
-			System.out.println("Input a decimal number between 0-127");
-			int decimal = keyB.nextInt();
-			for(int i=0; i>= 0; i=decimal){
-				int remainder = i%2;
-				System.out.print(remainder);
-			}
-
+		if(type==1){
+			System.out.println("What Binary number do you want to convert?");
+			keyB.nextLine();
+			int num = convertBin(keyB.nextLine());
+			System.out.println("The Binary converted into: ");
 		}
+		else{
+			System.out.println("What is Decimal number do you want to convert? ");
+			String num = convertDec(keyB.nextInt());
+		}
+		}
+		
 	
 	
 	
